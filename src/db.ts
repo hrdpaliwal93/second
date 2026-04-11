@@ -1,8 +1,5 @@
 import  mongoose, { Schema , Types, model } from 'mongoose'
- mongoose.connect(`${process.env.database_url}`)
-
-
-
+ mongoose.connect(`${process.env.database_url}second-brain`).then(()=>console.log("database connected")) .catch((err) => console.error("Connection failed", err));
 
 
 const userSchema = new Schema({
@@ -33,7 +30,7 @@ const linkSchema = new Schema({
 })
 
 export const userModel = model('users', userSchema)
-export const contentModel = model('content', contentSchema)
+export const contentModel = model('contents', contentSchema)
 export const tagModel = model('Tags', tagSchema)
 export const linkModel = model('Links', linkSchema)
  

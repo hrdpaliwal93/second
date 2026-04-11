@@ -1,10 +1,10 @@
 import 'dotenv/config'
 import express from 'express'
-import  {userModel } from './db.js'
+import  {contentModel, userModel } from './db.js'
 import JWT from 'jsonwebtoken'
 
 const app = express()
-
+app.use(express.json())
 
 
 
@@ -42,6 +42,34 @@ app.post('/api/v1/login' , async (req,res)=>{
     }
 })
 
+app.post('api/v1/content', (req,res)=>{
+    const {title ,type, link, tags} = req.body
+    let token  = req.headers.token
+    contentModel.create({
+        title,
+        type,
+        link,
+        tags,
+      
+
+    })
+
+
+})
+
+app.get('api/v1/content', (req,res)=>{
+    
+})
+app.delete('api/v1/content', (req,res)=>{
+    
+})
+
+app.post('api/v1/brain/share', (req,res)=>{
+    
+})
+app.get('api/v1/brain/:shareId', (req,res)=>{
+    
+})
 
 
 app.listen('8000')
