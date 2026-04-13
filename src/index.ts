@@ -45,16 +45,9 @@ app.post('/api/v1/login' , async (req,res)=>{
 
 app.post('api/v1/content', AuthMiddleware, (req,res)=>{
     const {title ,type, link, tags} = req.body
-    let token  = req.headers.token
-    contentModel.create({
-        title,
-        type,
-        link,
-        tags,
-      
+    const userId = req.id 
 
-    })
-
+    
 
 })
 
