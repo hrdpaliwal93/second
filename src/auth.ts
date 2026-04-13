@@ -3,15 +3,15 @@ import JWT, {  type JwtPayload } from 'jsonwebtoken'
 
 
 export function AuthMiddleware(req:Request,res:Response,next:NextFunction){
-  let token  = req.headers.authorization?.split(" ")[1] as string
+  let token  = req.headers.authorization?.split(" ")[1] 
   if(token){
     try{
        const decodeddata = JWT.verify(token, `${process.env.jwt_secret}`) as JwtPayload
       if(decodeddata){
-          req.headers.id = decodeddata.id 
+          req.id = decodeddata.id 
             next();
           }else{
-          res.json({message:"you are not logged in !"})
+          res.json({message:"you are not logged in!"})
             }
     }catch(e){
       console.error(e)

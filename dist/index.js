@@ -2,6 +2,7 @@ import 'dotenv/config';
 import express from 'express';
 import { contentModel, userModel } from './db.js';
 import JWT from 'jsonwebtoken';
+import { AuthMiddleware } from './auth.js';
 const app = express();
 app.use(express.json());
 app.post('/api/v1/signup', async (req, res) => {
@@ -36,7 +37,7 @@ app.post('/api/v1/login', async (req, res) => {
         console.log(e);
     }
 });
-app.post('api/v1/content', (req, res) => {
+app.post('api/v1/content', AuthMiddleware, (req, res) => {
     const { title, type, link, tags } = req.body;
     let token = req.headers.token;
     contentModel.create({
