@@ -219,4 +219,5 @@ export declare const linkModel: mongoose.Model<{
 } & {
     __v: number;
 }>;
+export default mongoose;
 //# sourceMappingURL=db.d.ts.map

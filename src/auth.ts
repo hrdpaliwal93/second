@@ -15,6 +15,7 @@ export function AuthMiddleware(req:Request,res:Response,next:NextFunction){
             }
     }catch(e){
       console.error(e)
+     
     }
    
 

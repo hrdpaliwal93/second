@@ -33,4 +33,4 @@ export const userModel = model('users', userSchema)
 export const contentModel = model('contents', contentSchema)
 export const tagModel = model('Tags', tagSchema)
 export const linkModel = model('Links', linkSchema)
- 
+ export default  mongoose
