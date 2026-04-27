@@ -9,7 +9,7 @@ const userSchema = new Schema({
 
 })
 
-const contentTypes = ["article", "image", "audio", "video"]
+const contentTypes = ["article", "image", "audio", "video", "link", "note"]
 const contentSchema = new Schema({
     
     title:{type:String, required:true},

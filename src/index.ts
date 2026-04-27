@@ -21,8 +21,7 @@ app.post('/api/v1/signup', async (req,res)=>{
     }).status(200)
     
    }catch(e){
-    console.log(e)
-   }
+    console.error(e)}
 
 })
 
@@ -43,8 +42,7 @@ app.post('/api/v1/login' , async (req,res)=>{
         }
         
     }catch(e){
-        console.log(e)
-    }
+        console.error(e)   }
 })
 
 app.post('/api/v1/content', AuthMiddleware,async (req,res)=>{
@@ -72,10 +70,24 @@ app.post('/api/v1/content', AuthMiddleware,async (req,res)=>{
 
 })
 
-app.get('api/v1/content', (req,res)=>{
+app.get('api/v1/content', async (req,res)=>{
+    const userId = req.id;
+    try{
+        let contents = await contentModel.findById({userId});
+    if(contents){
+        res.json({
+            contents,
+            success:true
+        })
+    }
+    
+    }catch(e){
+        console.error(e)
+    }
     
 })
 app.delete('api/v1/content', (req,res)=>{
+    let 
     
 })
 
