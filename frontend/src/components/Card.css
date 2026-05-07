@@ -1,0 +1,58 @@
+#card{
+    border: 2px solid #d5d7da;
+    width:fit-content;
+    
+    background-color: white;
+    height:max-content;
+    padding:  10px ;
+    position: relative;
+  
+
+}
+#card #card-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+ #card #card-header h2{
+    font-weight: 800;
+    font-size: 28px;
+    margin-right: 10px;
+ 
+
+}
+ #card #card-header a{
+ color: black;
+ margin-left: 25px;
+ text-transform: capitalize;
+ 
+
+}
+#card #card-header a:hover{
+ color: black;
+  margin-left: 25px;
+ text-decoration: underline;
+ 
+
+}
+#card section{
+    margin-bottom: 30px;
+    width: 300px;
+    height: max-content;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    border: 1px solid red ;
+    padding: 10px;
+    
+    
+    
+
+}
+#created-on{
+    position:absolute;
+    bottom: 0;
+     margin-top:100px ;
+    margin: 0px auto  ;
+}

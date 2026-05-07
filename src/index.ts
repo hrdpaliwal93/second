@@ -87,8 +87,7 @@ app.get('api/v1/content', async (req,res)=>{
     
 })
 app.delete('api/v1/content', (req,res)=>{
-    let 
-    
+  
 })
 
 app.post('api/v1/brain/share', (req,res)=>{
